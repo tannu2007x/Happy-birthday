@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08050b">
+<title>For You, Moyna — A Birthday Story</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap');
+:root{--pink:#ff86b9;--rose:#ff4e96;--violet:#9b7cff;--cream:#fff6fb;--muted:#cdb6c5;--line:#ffffff16}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#08050b;color:#fff;font-family:"DM Sans",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-5;background:
+radial-gradient(circle at 15% 15%,#ff4e9630,transparent 27%),
+radial-gradient(circle at 85% 65%,#8165ff25,transparent 29%),
+linear-gradient(135deg,#09050c,#180817 48%,#07040a)}
+.noise{position:fixed;inset:0;z-index:-1;opacity:.045;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;height:68px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:#08050bcc;border-bottom:1px solid var(--line);backdrop-filter:blur(20px)}
+.brand{font:32px "Great Vibes";color:#ff9fc7}.navright{display:flex;gap:10px;align-items:center}.pill{border:1px solid var(--line);background:#ffffff09;color:#fff;border-radius:999px;padding:10px 15px;font-size:11px;cursor:pointer}.music.on{background:#ff4e9620;border-color:#ff86b955}
+section{min-height:100vh;padding:115px 7% 85px;display:flex;align-items:center;justify-content:center}
+.wrap{width:min(1080px,100%);text-align:center}.eyebrow{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--pink)}
+.hero h1{font:clamp(78px,15vw,155px)/.78 "Great Vibes";font-weight:400;margin:26px 0;text-shadow:0 0 50px #ff4e9635}.hero h1 span{color:#ff9fc7}
+.lead{font:clamp(21px,3vw,29px) "Cormorant Garamond";color:#f2dbe7;max-width:720px;margin:auto}
+.cta{display:inline-flex;margin-top:30px;padding:14px 22px;border-radius:999px;background:linear-gradient(90deg,var(--rose),var(--violet));color:white;text-decoration:none;font-size:11px;font-weight:600;box-shadow:0 18px 50px #ff4e9630}
+.hero-stage{height:390px;margin:48px auto 0;max-width:930px;position:relative;overflow:hidden;border-radius:38px;border:1px solid var(--line);background:
+linear-gradient(0deg,#07040bd9,#07040b20 60%),url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1600&q=85") center/cover;box-shadow:0 35px 110px #0009}
+.hero-stage:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:11%;top:9%;background:#ffe4ef;box-shadow:0 0 80px #ffc6df66}
+.hero-stage:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,#ffffff0b 50%,transparent 80%);animation:shine 7s infinite}
+@keyframes shine{0%,45%{transform:translateX(-100%)}70%,100%{transform:translateX(100%)}}
+.stage-copy{position:absolute;left:35px;right:35px;bottom:30px;text-align:left}.stage-copy h2{font:45px "Cormorant Garamond"}.stage-copy p{color:#e8d1dc;font-size:12px;margin-top:6px}
+.scroll{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);font-size:8px;letter-spacing:3px;color:#cbb3c1}
+.title{font:600 clamp(45px,7vw,76px)/.95 "Cormorant Garamond";margin:11px 0 16px}.title span{color:var(--pink)}.desc{color:var(--muted);font-size:12px;line-height:1.9;max-width:700px;margin:auto}
+.letter{margin:35px auto 0;max-width:900px;padding:50px;text-align:left;border:1px solid var(--line);border-radius:32px;background:linear-gradient(135deg,#ffffff0b,#ffffff04);backdrop-filter:blur(18px);box-shadow:0 30px 90px #0006;position:relative}
+.letter:before{content:"“";position:absolute;top:20px;left:27px;font:80px "Cormorant Garamond";color:#ff86b92a}.letter p{font:23px/1.75 "Cormorant Garamond";color:#f8e7ef}.signature{text-align:right;font:42px "Great Vibes";color:#ff9fc7;margin-top:20px}
+.gallery{display:grid;grid-template-columns:1.35fr .65fr .65fr;grid-template-rows:200px 200px;gap:14px;margin-top:34px}.g{border-radius:25px;border:1px solid var(--line);overflow:hidden;position:relative;background:linear-gradient(135deg,#ff77b4,#7662ca);display:flex;align-items:center;justify-content:center}.g.big{grid-row:span 2}.g img{width:100%;height:100%;object-fit:cover;transition:.7s}.g:hover img{transform:scale(1.07)}.g span{font-size:50px;position:absolute}.g:after{content:"♥";position:absolute;bottom:12px;right:14px;color:#fff9}
+.chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}.chapter{padding:31px 22px;border-radius:26px;border:1px solid var(--line);background:#ffffff08}.chapter .num{font-size:9px;letter-spacing:3px;color:#ff86b9}.chapter h3{font:35px "Great Vibes";font-weight:400;color:#ff9fc7;margin:13px 0 8px}.chapter p{font-size:11px;line-height:1.8;color:#cdb6c5}
+.counter{display:flex;justify-content:center;gap:10px;margin:30px 0}.unit{min-width:88px;padding:18px 10px;border-radius:20px;background:#ffffff08;border:1px solid var(--line)}.unit strong{font-size:28px}.unit small{display:block;color:#9e8795;font-size:8px;letter-spacing:2px;margin-top:3px}
+.gift{width:160px;height:135px;margin:20px auto;position:relative;cursor:pointer;transition:.3s}.gift:hover{transform:translateY(-8px) scale(1.03)}.boxbody{position:absolute;left:8px;right:8px;bottom:0;height:82px;border-radius:8px;background:linear-gradient(135deg,#ff4e96,#8064e9);box-shadow:0 20px 40px #ff4e9635}.lid{position:absolute;left:0;right:0;top:29px;height:28px;border-radius:8px;background:#ff86b9}.ribbon{position:absolute;top:29px;bottom:0;left:67px;width:27px;background:#ffe4efaa}.bow{position:absolute;top:-7px;left:54px;font-size:45px}
+.finalbox{padding:65px 25px;border-radius:35px;border:1px solid var(--line);background:linear-gradient(135deg,#ffffff0b,#ffffff04);box-shadow:0 30px 90px #0006}.finalbox h2{font:76px "Great Vibes";font-weight:400;color:#ff9fc7}.finalbox p{max-width:650px;margin:12px auto;color:#d9c0cd;font:21px/1.6 "Cormorant Garamond"}
+footer{text-align:center;padding:25px;color:#806574;font-size:8px;letter-spacing:2px;border-top:1px solid var(--line)}
+.modal{position:fixed;inset:0;z-index:100;background:#030207e8;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(15px)}.modal.show{display:flex}.modalcard{max-width:540px;width:100%;padding:48px 35px;border-radius:32px;border:1px solid #fff2;background:#140b18}.modalcard h3{font:65px "Great Vibes";color:#ff9fc7}.modalcard p{font:23px/1.6 "Cormorant Garamond";color:#f2dce7;margin:15px 0 25px}
+#hearts{position:fixed;inset:0;z-index:40;pointer-events:none;overflow:hidden}.heart{position:absolute;bottom:-30px;color:#ff86b9;animation:float linear forwards}@keyframes float{0%{opacity:0;transform:translateY(0) scale(.5)}15%{opacity:.7}100%{opacity:0;transform:translateY(-115vh) rotate(25deg) scale(1.15)}}
+@media(max-width:700px){nav{height:62px}.brand{font-size:28px}.hero-stage{height:330px}.hero-stage:before{width:150px;height:150px}.stage-copy{left:23px;bottom:25px}.stage-copy h2{font-size:35px}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:180px 140px 140px}.g.big{grid-row:span 2}.chapters{grid-template-columns:1fr}.letter{padding:30px}.letter p{font-size:20px}.counter{gap:6px}.unit{min-width:69px}.unit strong{font-size:22px}.finalbox h2{font-size:58px}.finalbox p{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="noise"></div><div id="hearts"></div>
+<nav><div class="brand">WishNest BD</div><div class="navright"><a class="pill" href="#memories">Memories</a><button class="pill music" id="music">♪ Music</button></div></nav>
+
+<section class="hero" id="home"><div class="wrap">
+<div class="eyebrow">A digital love letter • made for one special person</div>
+<h1>Happy Birthday,<br><span>Moyna ❤️</span></h1>
+<p class="lead">Not just a wish. Not just a message. A little world made especially for you.</p>
+<a class="cta" href="#letter">Begin The Story ✦</a>
+<div class="hero-stage"><div class="stage-copy"><h2>For the smile I never want to lose.</h2><p>A premium birthday experience filled with words, memories, music and a little surprise.</p></div><div class="scroll">SCROLL TO DISCOVER ↓</div></div>
+</div></section>
+
+<section id="letter"><div class="wrap">
+<div class="eyebrow">01 • From the heart</div><h2 class="title">A letter written <span>for you</span> 💌</h2>
+<p class="desc">Every word below can be replaced with your customer's personal message.</p>
+<div class="letter"><p>Happy Birthday to the most beautiful soul. 🥺❤️<br><br>
+Today isn't only about celebrating another year. It's about celebrating <i>you</i>—your smile, your kindness, your little habits, and all the beautiful things that make you who you are.<br><br>
+I hope this new chapter brings you peaceful mornings, unforgettable moments, people who truly value you, and a thousand reasons to smile.<br><br>
+If life ever feels heavy, come back to this little page and remember: somewhere in this world, there is someone who thinks you are incredibly special.<br><br><b>Happy Birthday, beautiful. Keep shining. ✨</b></p><div class="signature">With love, Tanvir ♡</div></div>
+</div></section>
+
+<section id="memories"><div class="wrap">
+<div class="eyebrow">02 • The memories</div><h2 class="title">Little moments, <span>forever feelings</span> 📸</h2>
+<p class="desc">Use real customer photos here. The layout is designed to feel like a premium digital photo album.</p>
+<div class="gallery">
+<div class="g big"><img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=1100&q=85"><span>♡</span></div>
+<div class="g"><img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=85"></div>
+<div class="g"><img src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=800&q=85"></div>
+<div class="g"><img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=85"></div>
+<div class="g"><img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=85"></div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="eyebrow">03 • Our story</div><h2 class="title">Three chapters, <span>one beautiful story</span> 🌙</h2>
+<div class="chapters">
+<div class="chapter"><div class="num">CHAPTER 01</div><h3>The Beginning</h3><p>Every beautiful story starts with one small moment. Maybe a hello, a smile, or a simple conversation.</p></div>
+<div class="chapter"><div class="num">CHAPTER 02</div><h3>The Memories</h3><p>Then come the little moments—the laughs, late-night talks and memories that become impossible to forget.</p></div>
+<div class="chapter"><div class="num">CHAPTER 03</div><h3>Today</h3><p>And today, we celebrate you. A new year, new dreams, and countless beautiful moments waiting ahead.</p></div>
+</div></div></section>
+
+<section id="surprise"><div class="wrap">
+<div class="eyebrow">04 • The countdown</div><h2 class="title">A moment worth <span>waiting for</span> 🎂</h2>
+<p class="desc">Countdown can be set to the customer's exact birthday date and time.</p>
+<div class="counter"><div class="unit"><strong id="d">00</strong><small>DAYS</small></div><div class="unit"><strong id="h">00</strong><small>HOURS</small></div><div class="unit"><strong id="m">00</strong><small>MINUTES</small></div><div class="unit"><strong id="s">00</strong><small>SECONDS</small></div></div>
+<div class="gift" id="gift"><div class="bow">🎀</div><div class="lid"></div><div class="ribbon"></div><div class="boxbody"></div></div>
+<p class="desc">Tap the gift to unlock the secret message.</p>
+</div></section>
+
+<section><div class="wrap"><div class="finalbox">
+<div class="eyebrow">05 • One last thing</div><h2>Make a wish. ❤️</h2>
+<p>May your next chapter be softer, brighter and more beautiful than the last. And may you always have a reason to smile.</p>
+<a class="cta" href="#home">Replay Your Story ↺</a>
+</div></div></section>
+<footer>WISHNEST BD • PREMIUM CUSTOM BIRTHDAY WEBSITE • DEMO</footer>
+
+<div class="modal" id="modal"><div class="modalcard"><h3>For You 🎁</h3><p>“If I could give you one gift today, I'd give you the ability to see yourself through my eyes—so you'd finally know how incredibly special you are.” ❤️</p><button class="cta" id="close">Close ✦</button></div></div>
+
+<script>
+const hearts=document.getElementById('hearts');
+setInterval(()=>{const x=document.createElement('span');x.className='heart';x.textContent=['♥','♡','❤','✦','🌸'][Math.floor(Math.random()*5)];x.style.left=Math.random()*100+'%';x.style.fontSize=12+Math.random()*18+'px';x.style.animationDuration=6+Math.random()*6+'s';hearts.appendChild(x);setTimeout(()=>x.remove(),13000)},700);
+
+const target=new Date(Date.now()+3*86400000+7*3600000+22*60000);
+function countdown(){let t=Math.max(0,target-Date.now()),d=Math.floor(t/86400000);t%=86400000;let h=Math.floor(t/3600000);t%=3600000;let m=Math.floor(t/60000);let s=Math.floor(t/1000);document.getElementById('d').textContent=String(d).padStart(2,'0');document.getElementById('h').textContent=String(h).padStart(2,'0');document.getElementById('m').textContent=String(m).padStart(2,'0');document.getElementById('s').textContent=String(s).padStart(2,'0')}countdown();setInterval(countdown,1000);
+
+const modal=document.getElementById('modal');document.getElementById('gift').onclick=()=>modal.classList.add('show');document.getElementById('close').onclick=()=>modal.classList.remove('show');modal.onclick=e=>{if(e.target===modal)modal.classList.remove('show')};
+
+let ctx=null,playing=false,timer=null;
+function tone(f,t,d){const o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.035,t+.05);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g).connect(ctx.destination);o.start(t);o.stop(t+d)}
+function melody(){if(!playing)return;if(!ctx)ctx=new(window.AudioContext||window.webkitAudioContext)();const a=ctx.currentTime+.05;[261.63,329.63,392,329.63,293.66,349.23,440,349.23,261.63,329.63,392,493.88,440,392,329.63,293.66].forEach((n,i)=>tone(n,a+i*.48,.72));timer=setTimeout(melody,7600)}
+document.getElementById('music').onclick=()=>{playing=!playing;const b=document.getElementById('music');if(playing){b.textContent='♫ Music On';b.classList.add('on');melody()}else{b.textContent='♪ Music';b.classList.remove('on');clearTimeout(timer);if(ctx)ctx.suspend()}};
+</script>
+</body></html>
